@@ -46,6 +46,5 @@ group :development do
 end
 
 gem 'haml-rails'
-
 gem 'erb2haml'
 
