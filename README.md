@@ -1,28 +1,49 @@
 # usersテーブル
 ## カラム
-## id
 ## nickname
 ## avatar
-## text
+## profile
+## email
+## password
+## member
+## work
 ### アソシエーション
 ### has_many:projects
-### has_many:comments, as: :commentable
+### has_many:comments
+### has_many:likes
 
 # projectsテーブル
 ## カラム
-## id
 ## catch_copy
 ## concept
-## tag_list
 ## image_url
+## user_id
 ### アソシエーション
-### belongs_to:users
-### has_many:comments, as: :commentable
+### belongs_to:user
+### has_many:comments
+### has_many:likes
 
 # commentsテーブル
 ## カラム
-## commentable_id
-## commentable_type
+## user_id
+## project_id
 ## text
 ### アソシエーション
-### belongs_to:commentable, polymorphic: true
+### belongs_to:project, user
+
+# likesテーブル
+## カラム
+## user_id
+## project_id
+### アソシエーション
+### belongs_to:user
+### belongs_to:project
+
+# imagesテーブル
+## カラム
+## project_id
+## status
+### アソシエーション
+### belongs_to:project
+
+# tagsテーブル
