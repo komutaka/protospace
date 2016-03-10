@@ -45,3 +45,5 @@
 ## status
 ### アソシエーション
 ### belongs_to:project
+
+# tagsテーブル
