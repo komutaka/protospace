@@ -1,22 +1,19 @@
 # usersテーブル
 ## カラム
-## id
 ## nickname
 ## avatar
 ## profile
 ## email
 ## password
-## group_id
+## member
 ## work
 ### アソシエーション
 ### has_many:projects
 ### has_many:comments
-### belongs_to:group
 ### has_many:likes
 
 # projectsテーブル
 ## カラム
-## id
 ## catch_copy
 ## concept
 ## image_url
@@ -28,21 +25,23 @@
 
 # commentsテーブル
 ## カラム
-## commentable_id
-## commentable_type
+## user_id
+## project_id
 ## text
 ### アソシエーション
-### belongs_to:projects, users
-
-# groupsテーブル
-## カラム
-## name
-### アソシエーション
-### has_many:users
+### belongs_to:project, user
 
 # likesテーブル
+## カラム
 ## user_id
 ## project_id
 ### アソシエーション
 ### belongs_to:user
+### belongs_to:project
+
+# imagesテーブル
+## カラム
+## project_id
+## status
+### アソシエーション
 ### belongs_to:project
