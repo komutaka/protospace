@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160322132406) do
   create_table "projects", force: :cascade do |t|
     t.string   "catch_copy", limit: 255
     t.string   "consept",    limit: 255
-    t.string   "image_url",  limit: 255
+    t.string   "image",      limit: 255
     t.string   "user_id",    limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
