@@ -5,22 +5,22 @@
         %a{href: "#"}
       .media-body
         %h4#top-aligned-media.media-heading
-          = current_user.nickname
+          = @user.nickname
           %span.label.label-default.project-number
             29
             %i Projects
         .proto-user
           %span.degree
-            = current_user.member
+            = @user.member
         .row
           .col-md-6
             %h4 Profile
             %p
-              = current_user.profile
+              = @user.profile
           .col-md-6
             %h4 Work
             %p
-              = current_user.work
+              = @user.work
 .container.proto-list
   .row
     .col-sm-4.col-md-3.proto-content
