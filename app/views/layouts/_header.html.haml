@@ -7,7 +7,7 @@
     %a.navbar-brand(href="/")
       = image_tag("logo.png", alt: "PROTO TYPE - SHARE THE PROTOTYPE", height: "36px")
     .navbar-collapse.collapse.navbar-responsive-collapse
-      //not login 
+      //not login
       - unless user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li
@@ -24,7 +24,7 @@
               %li
                 = link_to 'My Page', user_path(current_user)
               %li
-                = link_to 'Profile Edit', edit_user_registration_path(current_user)
+                = link_to 'Profile Edit', edit_user_path(current_user)
               %li
                 = link_to 'Logout', destroy_user_session_path, method: :delete
           %li
