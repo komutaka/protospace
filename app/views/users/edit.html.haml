@@ -1,0 +1,29 @@
+.container.user-new
+  = form_for @user do |f|
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          %h2 Edit Profile
+          .user-name_image.row
+            .user-name.col-md-10
+              = f.text_field :nickname, placeholder: "nickname", autofocus: true, required: true
+            .user-image.col-md-2{ style: 'background-image: ' }
+              %button.btn.btn-primary Change image
+              = f.file_field :avatar, required: true
+          = f.email_field :email, placeholder: "E-Mail", class: "user-email"
+          = f.password_field :password, placeholder: "Password", class: "user-password", required: true
+        .col-md-12
+          %h4 Member of
+          .user-user-member.row
+            .user-name.col-md-12
+              = f.text_field :member, placeholder: "Member", required: true
+          %h4 Profile
+          .user-user-profile.row
+            .user-name.col-md-12
+              = f.text_area :profile, placeholder: "Profile", required: true
+          %h4 Works
+          .user-name_image.row
+            .user-name.col-md-12
+              = f.text_area :work, placeholder: "work", required: true
+      .row.text-center.user-btn
+        = f.submit :Save, class: "btn btn-lg btn-primary btn-block"

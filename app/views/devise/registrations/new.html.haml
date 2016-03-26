@@ -6,23 +6,23 @@
         %h2 Register
         .user-name_image.row
           .user-name.col-md-10
-            = f.text_field :nickname, placeholder: "Nickname", autofocus: true, required: true, id: "user_username"
+            = f.text_field :nickname, placeholder: "Nickname", autofocus: true, required: true
           .user-image.col-md-2
             %button.btn.btn-primary Add image
-            = f.file_field :avatar, required: true, id: "upload_avatar"
-        = f.text_field :email, placeholder: "E-Mail", class: "user-email"
-        = f.password_field :password, placeholder: "Password", class: "user-password", required: true, id: "user_password"
+            = f.file_field :avatar, required: true
+        = f.email_field :email, placeholder: "E-Mail", class: "user-email"
+        = f.password_field :password, placeholder: "Password", class: "user-password", required: true
         %h4 Member of
         .user-user-member.row
           .user-name.col-md-12
-            = f.text_field :member, placeholder: "Member", required: true, id: "user_group"
+            = f.text_field :member, placeholder: "Member", required: true
         %h4 Profile
         .user-user-profile.row
           .user-name.col-md-12
-            = f.text_field :profile, placeholder: "Profile", required: true, id: "user_profile"
+            = f.text_area :profile, placeholder: "Profile", required: true
         %h4 Work
         .user-name_image.row
           .user-name.col-md-12
-            = f.text_field :work, placeholder: "work", required: true, id: "user_work"
+            = f.text_area :work, placeholder: "work", required: true
   .row.text-center.user-btn
     = f.button class: "btn btn-lg btn-primary btn-block"
