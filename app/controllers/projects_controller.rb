@@ -3,6 +3,6 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
-  def create
+  def new
   end
 end
