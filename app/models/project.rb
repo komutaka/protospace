@@ -2,6 +2,10 @@ class Project < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   belongs_to :user
   has_many :images
-  accepts_nested_attributes_for :images
-  validates_presence_of :title, :catchcopy, :concept
+  accepts_nested_attributes_for :images, reject_if: :reject_images
+  validates_presence_of :title, :catch_copy, :concept
+
+  def reject_images(attributed)
+    attributed['image'].blank?
+  end
 end
