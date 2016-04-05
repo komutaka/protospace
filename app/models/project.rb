@@ -3,5 +3,5 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :images
   accepts_nested_attributes_for :images
-  validates_presence_of :user_id, :image
+  validates_presence_of :title, :catchcopy, :concept
 end
