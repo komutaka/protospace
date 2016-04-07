@@ -7,9 +7,9 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      redirect_to action: :index, notice: '投稿が完了しました'
+      redirect_to action: :index
     else
-      render :new, notice: '投稿に失敗しました'
+      render :new
     end
   end
 
