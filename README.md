@@ -20,6 +20,7 @@
 ## user_id
 ### アソシエーション
 ### belongs_to:user
+### has_many:images
 ### has_many:comments
 ### has_many:likes
 

@@ -1,0 +1,52 @@
+- if @project.errors.any?
+  .error_explanation
+    %h2
+      = @project.errors.count
+      件のエラーが発生しました
+    %ul
+      - @project.errors.full_messages.each do |message|
+        %li
+          = message
+.container.proto-new
+  = form_for(@project) do |f|
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          = f.text_field :title, placeholder: "Title", autofocus: true, required: true, class: "proto-new-title"
+      .row
+        .col-md-12
+          .cover-image-upload
+            = f.fields_for :images do |i|
+              = i.file_field :image
+              = i.hidden_field :status, value: "main"
+        .col-md-12
+          %ul.proto-sub-list.list-group
+            = f.fields_for :images do |i|
+              %li.list-group-item.col-md-4
+                .image-upload
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
+            = f.fields_for :images do |i|
+              %li.list-group-item.col-md-4
+                .image-upload
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
+            %li.list-group-item.col-md-4
+              .image-upload-plus
+                %span +
+      .row.proto-description
+        .col-md-12
+          = f.text_field :catch_copy, placeholder: "Catch Copy"
+        .col-md-12
+          = f.text_area :concept, placeholder: "Concept", cols: "30", rows: "4"
+        .col-md-12
+          %h4 Tag List
+          .row
+            .col-md-3
+              %input{type: "text", placeholder: "Web Design"}/
+            .col-md-3
+              %input{type: "text", placeholder: "UI"}/
+            .col-md-3
+              %input{type: "text", placeholder: "Application"}/
+      .row.text-center.proto-btn
+        = f.submit :Publish, class: "btn btn-lg btn-primary btn-block"
