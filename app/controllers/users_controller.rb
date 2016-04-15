@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit]
 
   def show
+    @projects = @user.projects.page(params[:page]).per(8)
   end
 
   def edit
