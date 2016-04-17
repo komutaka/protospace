@@ -1,4 +1,12 @@
 .col-sm-4.col-md-3.proto-content
+  - if user_signed_in? && current_user.id == project.user_id
+    .dropdown.drop_menu_location.open
+      %button.btn.btn-default.dropdown-toggle.position-relative{ id: "dropdownMenu", type: "button",  data: { toggle: "dropdown" } } ACTION
+      %ul.dropdown-menu{ aria: {labelledby: "dropdownMenu1"} }
+        %li
+          =link_to "Delete", project_path(project), html: { method: :delete , method: "delete", rel: "nofollow"}, data: {method: "delete"}
+        %li
+          =link_to "Edit", edit_project_path(project)
   .thumbnail
     = link_to image_tag("#{project.images.main.first.image}"), project_path(project)
     .caption
@@ -6,7 +14,7 @@
         = project.title
       .proto-meta
         .proto-user
-          = link_to "by #{project.user.nickname}", user_path(project.user.id)
+          = link_to "by #{project.user.nickname}", user_path(project.user)
         .proto-posted
           = project.created_at.strftime("%b %d")
       %ul.proto-tag-list.list-inline
