@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  def show
+  end
+
   def new
     @project = Project.new
     @project.images.build
@@ -10,6 +13,24 @@ class ProjectsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @project.update(project_params)
+      redirect_to root_path, notice: 'プロトタイプを更新しました'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @project.user_id == current_user.id
+      @project.destroy
+      redirect_to root_path, notice: 'プロトタイプを削除しました'
     end
   end
 
