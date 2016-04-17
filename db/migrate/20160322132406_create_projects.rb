@@ -4,7 +4,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :catch_copy
       t.string :consept
       t.string :image
-      t.string :user_id
+      t.integer :user_id
       t.timestamps null: false
     end
   end
