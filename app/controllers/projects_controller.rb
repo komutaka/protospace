@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+  before_action :set_project, only: [:show, :edit, :update, :destroy]
+
   def show
   end
 
@@ -37,5 +39,9 @@ class ProjectsController < ApplicationController
   private
   def project_params
     params.require(:project).permit(:catch_copy, :title, :concept, images_attributes: [:id, :image, :status]).merge(user_id: current_user.id)
+  end
+
+  def set_project
+    @project = Project.find(params[:id])
   end
 end
