@@ -1,10 +1,10 @@
 .col-sm-4.col-md-3.proto-content
   - if user_signed_in? && current_user.id == project.user_id
-    .dropdown.drop_menu_location.open
-      %button.btn.btn-default.dropdown-toggle.position-relative{ id: "dropdownMenu", type: "button",  data: { toggle: "dropdown" } } ACTION
+    .dropdown.drop_menu_location
+      %button.btn.btn-default{ id: "dropdownMenu", type: "button",  data: { toggle: "dropdown" } } ACTION
       %ul.dropdown-menu{ aria: {labelledby: "dropdownMenu1"} }
         %li
-          =link_to "Delete", project_path(project), html: { method: :delete , method: "delete", rel: "nofollow"}, data: {method: "delete"}
+          =link_to "Delete", project_path(project), rel: "nofollow", data: {method: "delete"}
         %li
           =link_to "Edit", edit_project_path(project)
   .thumbnail
