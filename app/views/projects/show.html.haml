@@ -14,6 +14,8 @@
             %span.degree
               = @project.user.member
 
+    .col-md-6.clearfix
+      = render partial: "likes/like"
   .row
     .col-md-9
       = image_tag("#{@project.images.main.first.image}", class: 'img-responsive')
