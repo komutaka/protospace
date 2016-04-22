@@ -1,0 +1,33 @@
+%p{ id: "notice" }
+= notice
+.container.proto-page
+  %header.row.user-nav
+    .col-md-6
+      .media
+        .media-left
+          = link_to image_tag("#{@project.user.avatar}", alt: "64×64",   data: { holder: { rendered: "true" } }, data:  { src: "holder.js/64x64"}, style: "width: 64px; height: 64px;", class: "media-object"), user_path(@project.user)
+        .media-body
+          %h4#top-aligned-media.media-heading
+            = @project.title
+          .proto-user
+            = link_to "by #{@project.user.nickname}", user_path(@project.user)
+            %span.degree
+              = @project.user.member
+
+  .row
+    .col-md-9
+      = image_tag("#{@project.images.main.first.image}", class: 'img-responsive')
+    .col-md-3
+      %ul.proto-sub-list.list-group
+      - @project.images.sub.each do |sub|
+        %li.list-group-item
+          = image_tag("#{sub.image}", class: 'img-responsive')
+  .row.proto-description
+    .col-md-3
+      %h4 Catch Copy
+      %p
+        = @project.catch_copy
+    .col-md-6
+      %h4 Concept
+      %p
+        = @project.concept
