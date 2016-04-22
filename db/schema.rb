@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405050256) do
+ActiveRecord::Schema.define(version: 20160422130645) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "project_id", limit: 4
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 20160405050256) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "image",      limit: 255
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "project_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
   create_table "projects", force: :cascade do |t|
