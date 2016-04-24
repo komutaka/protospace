@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   namespace :projects do
     resources :newest, only: :index
     resources :ranking, only: :index
-    resources :likes, only: [:create, :destroy]
   end
-  resources :projects, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :projects, only: [:new, :create, :show, :edit, :update, :destroy] do
+    resources :likes, only: [:create, :destroy], module: :projects
+  end
   root to: "projects/ranking#index"
 end
