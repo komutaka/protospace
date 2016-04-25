@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def show
+    @comment = Comment.new(project_id: @project)
   end
 
   def new
