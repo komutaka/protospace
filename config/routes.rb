@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :projects, only: [:new, :create, :show, :edit, :update, :destroy] do
     resources :likes, only: [:create, :destroy], module: :projects
+    resources :comments, only: :create, module: :projects
   end
   root to: "projects/ranking#index"
 end
