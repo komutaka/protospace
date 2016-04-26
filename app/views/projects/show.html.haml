@@ -31,3 +31,19 @@
       %h4 Concept
       %p
         = @project.concept
+  .row.proto-comments
+    %h4.col-md-12
+      Comments
+      %span.num
+        (#{@project.comments.count})
+    #comments
+      = render partial: "projects/comments/comment", locals: {comment: @comment}, collection: @project.comments
+- if user_signed_in?
+  = form_for [@project, @comment], class: "form-inline", role: "form", remote: true do |f|
+    %h4 Write a comment
+    .row
+      .form-group.col-md-10
+        = f.text_area :comment, placeholder: "Your comments", rows: "3", class: "form-control", id: "comment_prototype_id"
+      .form-group.col-md-2
+        = f.submit "Comment", class: "btn btn-primary"
+
