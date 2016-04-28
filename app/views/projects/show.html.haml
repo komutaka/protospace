@@ -34,7 +34,7 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num
+      %span.num#comments_counter
         (#{@project.comments.count})
     #comments
       = render partial: "projects/comments/comment", locals: {comment: @comment}, collection: @project.comments
