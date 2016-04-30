@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def show
     @comment = Comment.new(project_id: @project)
+    @like = Like.find_by(user_id: current_user.id, project_id: @project)
   end
 
   def new
