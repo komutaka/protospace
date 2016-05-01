@@ -9,8 +9,4 @@ class Project < ActiveRecord::Base
   def reject_images(attributed)
     attributed['image'].blank?
   end
-
-  def like_user(user_id)
-    likes.find_by(user_id: user_id)
-  end
 end
