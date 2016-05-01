@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160424035520) do
 
   create_table "comments", force: :cascade do |t|
@@ -36,6 +35,9 @@ ActiveRecord::Schema.define(version: 20160424035520) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
+
+  add_index "likes", ["project_id"], name: "index_likes_on_project_id", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.string   "catch_copy",  limit: 255

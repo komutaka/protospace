@@ -1,8 +1,8 @@
 class CreateLikes < ActiveRecord::Migration
   def change
     create_table :likes do |t|
-      t.integer :user_id
-      t.integer :project_id
+      t.references :user, index: true
+      t.references :project, index: true
       t.timestamps null: false
     end
   end
