@@ -1,5 +1,5 @@
 class Projects::LikesController < ApplicationController
-  before_action :set_project, only: [:create, :destroy]
+  before_action :set_likes, only: [:create, :destroy]
   before_action :find_likes, only: [:create, :destroy]
 
   def create
@@ -12,7 +12,7 @@ class Projects::LikesController < ApplicationController
   end
 
   private
-  def set_project
+  def set_likes
     @project = Project.find(params[:project_id])
   end
 
