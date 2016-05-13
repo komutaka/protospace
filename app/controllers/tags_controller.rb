@@ -4,7 +4,6 @@ class TagsController < ApplicationController
   end
 
   def show
-    @tag_name = params[:id]
-    @projects = Project.includes(:user).tagged_with(@tag_name)
+    @projects = Project.includes(:user).tagged_with(params[:tag_name])
   end
 end
