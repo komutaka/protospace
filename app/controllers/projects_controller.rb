@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   def show
     @comment = Comment.new(project_id: @project)
     @like = current_user.likes.find_by(project_id: @project)
+    @tags = @project.tag_list
   end
 
   def new
@@ -40,7 +41,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:catch_copy, :title, :concept, images_attributes: [:id, :image, :status]).merge(user_id: current_user.id)
+    params.require(:project).permit(:catch_copy, :title, :concept, images_attributes: [:id, :image, :status]).merge(user_id: current_user.id, tag_list: params[:tag_list])
   end
 
   def set_project
