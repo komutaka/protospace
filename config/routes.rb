@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show, :edit, :update]
-  resources :tags, only: [:index, :show]
+  resources :tags, only: [:index, :show], param: :tag_name
 
   namespace :projects do
     resources :newest, only: :index
