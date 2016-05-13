@@ -41,7 +41,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:catch_copy, :title, :concept,  images_attributes: [:id, :image, :status]).merge(user_id: current_user.id, tag_list: params[:tag_list])
+    params.require(:project).permit(:catch_copy, :title, :concept, images_attributes: [:id, :image, :status]).merge(user_id: current_user.id, tag_list: params[:tag_list])
   end
 
   def set_project
