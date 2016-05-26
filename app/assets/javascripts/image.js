@@ -12,9 +12,9 @@ $(function() {
   });
   $('#edit-sub2-image input:file').uploadThumbs({
   });
-  $('#new-user-image input:file').uploadThumbs({
+  $('#new-user-avatar input:file').uploadThumbs({
   });
-  $('#edit-user-image input:file').uploadThumbs({
+  $('#edit-user-avatar input:file').uploadThumbs({
   });
 
 });
