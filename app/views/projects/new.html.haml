@@ -15,7 +15,7 @@
           = f.text_field :title, placeholder: "Title", autofocus: true, required: true, class: "proto-new-title"
       .row
         .col-md-12
-          .cover-image-upload
+          .cover-image-upload#new-main-image
             = f.fields_for :images do |i|
               = i.file_field :image
               = i.hidden_field :status, value: "main"
@@ -23,12 +23,12 @@
           %ul.proto-sub-list.list-group
             = f.fields_for :images do |i|
               %li.list-group-item.col-md-4
-                .image-upload
+                .image-upload#new-sub1-image
                   = i.file_field :image
                   = i.hidden_field :status, value: "sub"
             = f.fields_for :images do |i|
               %li.list-group-item.col-md-4
-                .image-upload
+                .image-upload#new-sub2-image
                   = i.file_field :image
                   = i.hidden_field :status, value: "sub"
             %li.list-group-item.col-md-4

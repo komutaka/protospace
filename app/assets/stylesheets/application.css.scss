@@ -1,2 +1,19 @@
 @import "bootstrap";
 @import "protospace";
+
+.thumb {
+  width: 100%;
+  height: 100%;
+}
+
+#new-user-avatar .thumb {
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+}
+
+#edit-user-avatar .thumb {
+  width: 75px;
+  height: 75px;
+  border-radius: 100px;
+}

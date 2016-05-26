@@ -7,7 +7,7 @@
         .user-name_image.row
           .user-name.col-md-10
             = f.text_field :nickname, placeholder: "Nickname", autofocus: true, required: true
-          .user-image.col-md-2
+          .user-image.col-md-2#new-user-avatar
             %button.btn.btn-primary Add image
             = f.file_field :avatar, required: true
         = f.email_field :email, placeholder: "E-Mail", class: "user-email"
