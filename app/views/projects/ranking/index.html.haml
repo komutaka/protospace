@@ -17,4 +17,6 @@
     = render partial: "projects/project", collection: @ranking_projects
 
 .text-center
-  = paginate @ranking_projects
+  %ul.pagination
+    %li.active
+      = paginate @ranking_projects
