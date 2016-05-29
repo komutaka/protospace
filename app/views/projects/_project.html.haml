@@ -7,7 +7,7 @@
           =link_to "Delete", project_path(project), rel: "nofollow", data: {method: "delete"}
         %li
           =link_to "Edit", edit_project_path(project)
-  .thumbnail
+  .thumbnail#content
     = link_to image_tag("#{project.images.main.first.image}"), project_path(project)
     .caption
       %h3

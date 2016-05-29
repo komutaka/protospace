@@ -1,5 +1,5 @@
 $('#comment_field').val('');
-$('#comments').html(
+$('#comment_list').html(
   '<%= j(render partial: 'projects/comments/comment', collection: @project.comments) %>')
 $('#comments_counter').html('(<%= @project.comments.count %>)')
 

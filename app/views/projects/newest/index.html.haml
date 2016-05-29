@@ -6,9 +6,9 @@
   .container
     .row
       %ul.nav.nav-pills.col-lg-11
-        %li.active{ role: "presentation" }
-          = link_to "Popular PROTO", root_path
         %li{ role: "presentation" }
+          = link_to "Popular PROTO", root_path
+        %li.active{ role: "presentation" }
           = link_to "Newest PROTO", projects_newest_index_path
       = link_to "View Tags", tags_path, class: "btn btn-default col-lg-1"
 
@@ -17,4 +17,6 @@
     = render partial: "projects/project", collection: @projects
 
 .text-center
-  = paginate @projects
+  %ul.pagination
+    %li.active
+      = paginate @projects
