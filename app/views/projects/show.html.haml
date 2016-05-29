@@ -46,7 +46,7 @@
         (#{@project.comments.count})
     .col-md-8#comment_area
       #comment_list
-        = render partial: "projects/comments/comment", locals: {comment: @comment}, collection: @project.comments
+        = render partial: "projects/comments/comment", locals: { comment: @comment }, collection: @project.comments
       - if user_signed_in?
         = form_for [@project, @comment], class: "form-inline", role: "form", remote: true do |f|
           %h4
