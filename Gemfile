@@ -55,3 +55,16 @@ gem 'kaminari'
 gem 'acts-as-taggable-on'
 gem 'jquery-turbolinks'
 gem 'fog'
+
+group :development, :test do
+  gem "rspec-rails"         #Rails 専用の機能を追加するRSpecのラッパーライブラリ
+  gem "factory_girl_rails"  #テストデータを作成する
+end
+
+group :test do
+  gem "faker"               #名前やメールアドレス、その他のプレースホルダなどをダミーデータ生成
+  gem "capybara"            #ユーザーとWebアプリケーションのやり取りをプログラム上で簡単にシュミレートを可能にする
+  gem "database_cleaner"    #データベースをまっさらな状態で各specが実行できるようにする
+  gem "launchy"             #テストのデバック用
+  gem "poltergeist"         #capybaraのためのドライバ
+end
