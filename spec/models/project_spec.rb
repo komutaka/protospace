@@ -13,8 +13,7 @@ describe Project do
   describe '#create' do
     context 'valid' do
       it "is valid with all information" do
-        project = build(:project)
-        expect(project).to be_valid
+        expect(build(:project)).to be_valid
       end
     end
 
@@ -37,6 +36,9 @@ describe Project do
         expect(project.errors[:concept]).to include("を入力してください。")
       end
     end
+
+# reject_images(attributed)をテストする
+#       it "is invalid if sub-images created" do
 
   end
 end
