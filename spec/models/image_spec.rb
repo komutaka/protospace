@@ -1,14 +1,12 @@
 require 'rails_helper'
-# describe Image do
-#   describe '#create' do
-#     context "with valid params" do
-#       it "creates a new Project" do
-#         params = { images_attributes: [ FactoryGirl.attributes_for( :image ) ] }
-#         expect {
-#           post :create,
-#           project: FactoryGirl.attributes_for( :project ).merge( params )
-#           }.to change( Project, :count ).by( 1 ).and change( Image, :count ).by( 1 )
-#        end
-#     end
-#   end
-# end
+
+describe Image do
+  describe 'associations' do
+    it 'is associated with a project' do
+      binding.pry
+      project = create(:project)
+      image = create(:image, project: project)
+      expect(image.project).to eq project
+    end
+  end
+end
