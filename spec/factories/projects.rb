@@ -2,14 +2,19 @@ FactoryGirl.define do
 
   factory :project do
     catch_copy      { Faker::Lorem.word }
-    user_id         "1"
+    user
     title           { Faker::Name.name }
     concept         { Faker::Lorem.sentence }
-  end
 
-  #   after( :build ) do |project|
-  #     project.main_image = build(:main_image, project: project)
-  #   end
-  # end
+    # after(:create) do |project| 
+    #   binding.pry
+    #   project.images << create(:image, project_id: 1)
+    # end
+
+    # after(:build) do |project| 
+    #   binding.pry
+    #   project.images << build(:image, project_id: 1)
+    # end
+  end
 
 end
